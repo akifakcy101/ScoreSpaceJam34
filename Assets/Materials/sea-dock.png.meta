@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sea-dock_0: -6976489578583030917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
