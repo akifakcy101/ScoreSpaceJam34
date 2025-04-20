@@ -29,47 +29,25 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""MouseDrag"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""f473e919-b855-4bfb-8c2e-d2a0a09e38e9"",
-                    ""expectedControlType"": ""Delta"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""a74dc497-e440-47a3-b90e-8e10f445e1dd"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseDrag"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Modifier"",
-                    ""id"": ""4bee116c-8fc2-4b22-a76a-b981199afd42"",
+                    ""name"": """",
+                    ""id"": ""b0a2456e-2339-449d-984a-6fbc0df4df0f"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""SlowTap"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseDrag"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Binding"",
-                    ""id"": ""736f6fad-9e75-4bbd-8055-db8879b34cb9"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseDrag"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }

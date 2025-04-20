@@ -26,7 +26,9 @@ public class PlayerInputManager : MonoBehaviour
             playerInput = new PlayerInput();
             playerInput.Enable();
 
-            playerInput.Player.MouseDrag.performed += i => { Debug.Log("A"); };
+            playerInput.Player.MouseDrag.started += i => { Debug.Log("Starteed"); };
+            playerInput.Player.MouseDrag.performed += i => { Debug.Log("Performed"); };
+            playerInput.Player.MouseDrag.canceled += i => { Debug.Log("Canceled"); };
 
         }
     }
