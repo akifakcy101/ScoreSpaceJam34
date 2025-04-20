@@ -387,24 +387,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1589647523 stripped
+--- !u!1 &1865733067 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2175569714851083453, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 938941844620137307, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
   m_PrefabInstance: {fileID: 8045491867499627393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1589647528
+--- !u!114 &1865733073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589647523}
+  m_GameObject: {fileID: 1865733067}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7e19c7f4355a974eab3a6fbb6779788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcePower: 500
+  forcePower: 30
 --- !u!1001 &8045491867499627393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,7 +415,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 206786421096967880, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
       propertyPath: m_LinearDamping
-      value: 2.38
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144187185026611731, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294084572244872572, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818685845137130559, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_AngleLimits.m_UpperAngle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3706258608376961910, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -457,6 +469,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4902498378211200171, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047745041094905670, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545259728026257282, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102661759384843927, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7952110424254196370, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
       propertyPath: m_UseLimits
       value: 1
@@ -465,17 +493,29 @@ PrefabInstance:
       propertyPath: m_AngleLimits.m_UpperAngle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8422608963911527999, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8445813772789799144, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
       propertyPath: m_Name
       value: Ropes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814651348150933591, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002096935823656014, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+      propertyPath: m_LinearDamping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2175569714851083453, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 938941844620137307, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1589647528}
+      addedObject: {fileID: 1865733073}
   m_SourcePrefab: {fileID: 100100000, guid: a1e76e9a51129484fa303619c38a98ea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
