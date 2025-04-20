@@ -1,0 +1,34 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "667794dc-3543-489d-a9d6-1aff5a9a651b",
+            "actions": [
+                {
+                    "name": "MouseDrag",
+                    "type": "Button",
+                    "id": "f473e919-b855-4bfb-8c2e-d2a0a09e38e9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b0a2456e-2339-449d-984a-6fbc0df4df0f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "SlowTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseDrag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
