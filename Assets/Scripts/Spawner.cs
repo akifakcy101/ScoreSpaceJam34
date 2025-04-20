@@ -13,7 +13,19 @@ public class Spawner : MonoBehaviour
     public float minX = -4f, maxX = 4f; // X ekseni sýnýrlarý
 
     private float nextSpawnY;
-    private float currentDangerFrequency = 0.2f; // Baþlangýç sýklýðý (20%)
+
+    [Header("Danger Frequency")]
+    private float currentDangerFrequency = 0.1f; // Baþlangýç sýklýðý (20%)
+    [SerializeField] private float lowDangerFrequency;
+    [SerializeField] private float midDangerFrequency;
+    [SerializeField] private float maxDangerFrequency;
+
+    [Header("Rescue Frequency")]
+    private float currentRescueFrequency = 0.2f; // Baþlangýç sýklýðý (20%)
+    [SerializeField] private float lowRescueFrequency;
+    [SerializeField] private float midRescueFrequency;
+    [SerializeField] private float maxRescueFrequency;
+
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
 
@@ -29,6 +41,7 @@ public class Spawner : MonoBehaviour
         while (nextSpawnY < camY + spawnDistanceFromCamera)
         {
             UpdateDangerFrequency(nextSpawnY);
+            UpdateRescueFrequency(nextSpawnY);
 
             // Zarar verici obje spawn etme kontrolü
             if (Random.value < currentDangerFrequency)
@@ -37,7 +50,7 @@ public class Spawner : MonoBehaviour
             }
 
             // Kurtarýlacak insan için %40 ihtimal
-            if (Random.value < 0.4f)
+            if (Random.value < currentRescueFrequency)
             {
                 Vector2 rescuePos;
                 int tries = 0;
@@ -79,18 +92,35 @@ public class Spawner : MonoBehaviour
     {
         if (y < 100f)
         {
-            currentDangerFrequency = 0.2f; // %20
+            currentDangerFrequency = lowDangerFrequency; // %20
         }
         else if (y < 500f)
         {
-            currentDangerFrequency = 0.4f; // %40
+            currentDangerFrequency = midDangerFrequency; // %40
         }
         else
         {
             float increase = ((y - 500f) / 200f) * 0.05f;
-            currentDangerFrequency = Mathf.Clamp(0.4f + increase, 0.4f, 0.9f); // Max %90
+            currentDangerFrequency = Mathf.Clamp(midDangerFrequency + increase, midDangerFrequency, maxDangerFrequency); // Max %90
         }
     }
+    void UpdateRescueFrequency(float y)
+    {
+        if (y < 100f)
+        {
+            currentRescueFrequency = lowRescueFrequency;
+        }
+        else if (y < 500f)
+        {
+            currentRescueFrequency = midRescueFrequency;
+        }
+        else
+        {
+            float increase = ((y - 500f) / 200f) * 0.05f;
+            currentRescueFrequency = Mathf.Clamp(midRescueFrequency + increase, midRescueFrequency, maxRescueFrequency);
+        }
+    }
+
     void CleanupObjects()
     {
         float cleanupY = mainCamera.transform.position.y - 20f; // 20 birimden fazla aþaðýdaysa sil
