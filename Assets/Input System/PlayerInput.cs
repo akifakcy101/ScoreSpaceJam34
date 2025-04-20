@@ -35,6 +35,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PauseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b836a45-f271-462d-a352-ab922297941a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""MouseDrag"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d779e686-10e3-4cbf-8870-146ba2d0d7b0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +77,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_MouseDrag = m_Player.FindAction("MouseDrag", throwIfNotFound: true);
+        m_Player_PauseButton = m_Player.FindAction("PauseButton", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -124,11 +145,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_MouseDrag;
+    private readonly InputAction m_Player_PauseButton;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @MouseDrag => m_Wrapper.m_Player_MouseDrag;
+        public InputAction @PauseButton => m_Wrapper.m_Player_PauseButton;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -141,6 +164,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MouseDrag.started += instance.OnMouseDrag;
             @MouseDrag.performed += instance.OnMouseDrag;
             @MouseDrag.canceled += instance.OnMouseDrag;
+            @PauseButton.started += instance.OnPauseButton;
+            @PauseButton.performed += instance.OnPauseButton;
+            @PauseButton.canceled += instance.OnPauseButton;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -148,6 +174,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MouseDrag.started -= instance.OnMouseDrag;
             @MouseDrag.performed -= instance.OnMouseDrag;
             @MouseDrag.canceled -= instance.OnMouseDrag;
+            @PauseButton.started -= instance.OnPauseButton;
+            @PauseButton.performed -= instance.OnPauseButton;
+            @PauseButton.canceled -= instance.OnPauseButton;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -168,5 +197,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMouseDrag(InputAction.CallbackContext context);
+        void OnPauseButton(InputAction.CallbackContext context);
     }
 }

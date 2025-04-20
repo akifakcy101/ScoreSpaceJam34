@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Danger
+  - Obstacle
+  - People
+  - Healt
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,6 @@ using UnityEngine;
 public class LifeSaverManager : MonoBehaviour
 {
 
-    private int lifeSaverHealt = 3;
 
     private void OnEnable()
     {
@@ -16,8 +15,9 @@ public class LifeSaverManager : MonoBehaviour
 
     private void ChangeLifeSaverHealt(int amount)
     {
-        lifeSaverHealt += amount;
-        if(lifeSaverHealt <= 0)
+        GameManager.instance.healtPoint += amount;
+        Debug.Log("A");
+        if(GameManager.instance.healtPoint <= 0)
         {
             GameManager.OnGameEnd.Invoke();
         }
@@ -26,23 +26,24 @@ public class LifeSaverManager : MonoBehaviour
     {
         if (collision.tag == "Obstacle")
         {
-            GameManager.OnDamaged.Invoke(-1);
+            GameManager.OnDamaged?.Invoke(-1);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "Healt")
         {
-            GameManager.OnDamaged.Invoke(1);
+            GameManager.OnDamaged?.Invoke(1);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "People")
         {
-            GameManager.OnPointAcquired.Invoke();
+            GameManager.OnPointAcquired?.Invoke();
             Destroy(collision.gameObject);
         }
 
     }
+
     private void Update()
     {
-        Debug.Log("Saðlýk:" + lifeSaverHealt);
+        Debug.Log("Saðlýk:" + GameManager.instance.healtPoint);
     }
 }

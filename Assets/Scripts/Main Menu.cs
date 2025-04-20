@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         string input = memberinput.text.Trim();
+        Time.timeScale = 1f;
 
         if (!string.IsNullOrEmpty(input) && !input.Contains(" "))
         {

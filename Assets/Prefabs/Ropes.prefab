@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 6047745041094905670}
   - component: {fileID: 7804991902302811973}
   - component: {fileID: 4656776651905124151}
+  - component: {fileID: 1078397206325503793}
   m_Layer: 0
   m_Name: Rope_0 (7)
   m_TagString: Untagged
@@ -567,6 +568,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.23721276, y: 0.94885105}
   m_EdgeRadius: 0
+--- !u!114 &1078397206325503793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938941844620137307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e19c7f4355a974eab3a6fbb6779788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forcePower: 50
 --- !u!1 &1121710602443190107
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +657,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.003, y: 4.505}
+  m_ConnectedAnchor: {x: -0.004280308, y: 4.495}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -855,6 +869,7 @@ GameObject:
   - component: {fileID: 206786421096967880}
   - component: {fileID: 7952110424254196370}
   - component: {fileID: 813565632283758510}
+  - component: {fileID: 5509184474200023255}
   m_Layer: 0
   m_Name: LifeSaver
   m_TagString: Untagged
@@ -975,7 +990,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.51}
-  m_ConnectedAnchor: {x: -0.02, y: -0.5000007}
+  m_ConnectedAnchor: {x: -0.02, y: -0.5000012}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1021,6 +1036,49 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &5509184474200023255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175569714851083453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75764ef57e7f62498b1291a1b5dc594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5804583439793038032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8721163186956125517}
+  m_Layer: 0
+  m_Name: Cam Follow Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8721163186956125517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804583439793038032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3706258608376961910}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6213370058817081174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,7 +2048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8445813772789799144}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.59, z: -0.057682656}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2006,5 +2064,6 @@ Transform:
   - {fileID: 4928316181326868223}
   - {fileID: 3049076660873674753}
   - {fileID: 9196284864840151935}
+  - {fileID: 8721163186956125517}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

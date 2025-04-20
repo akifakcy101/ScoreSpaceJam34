@@ -32,6 +32,13 @@ public class PlayerInputManager : MonoBehaviour
 
         }
     }
+    private void OnDisable()
+    {
+        if(playerInput != null)
+        {
+            playerInput.Disable();
+        }
+    }
 
 
 }
