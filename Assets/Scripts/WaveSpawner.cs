@@ -50,11 +50,11 @@ public class WaveSpawner : MonoBehaviour
 
         if (index == 0)
         {
-            spawnX = -2.3f;
+            spawnX = -5.1f;
         }
         else if (index == 1)
         {
-            spawnX = 2.3f;
+            spawnX = 5.1f;
         }
         else if (index == 2)
         {
@@ -62,7 +62,7 @@ public class WaveSpawner : MonoBehaviour
         }
         else if (index == 3)
         {
-            spawnX = Random.Range(-6f, 5f);
+            spawnX = Random.Range(-1.5f, 5f);
         }
 
         Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);

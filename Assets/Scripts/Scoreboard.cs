@@ -36,7 +36,42 @@ public class Scoreboard : MonoBehaviour
         });
     }
 
-    public void SubmitScore()
+    public static void SubmitScoreStatic(string memberID, int newScore, int leaderboardID)
+    {
+        LootLockerSDKManager.GetMemberRank(leaderboardID.ToString(), memberID, (response) =>
+        {
+            if (response.success)
+            {
+                int currentScore = response.score;
+
+                if (newScore > currentScore)
+                {
+                    LootLockerSDKManager.SubmitScore(memberID, newScore, leaderboardID.ToString(), (submitResponse) =>
+                    {
+                        if (submitResponse.success)
+                            Debug.Log("Skor güncellendi!");
+                        else
+                            Debug.LogError("Skor gönderilemedi: " + submitResponse.errorData.message);
+                    });
+                }
+                else
+                {
+                    Debug.Log("Yeni skor daha düşük veya eşit.");
+                }
+            }
+            else
+            {
+                LootLockerSDKManager.SubmitScore(memberID, newScore, leaderboardID.ToString(), (submitResponse) =>
+                {
+                    if (submitResponse.success)
+                        Debug.Log("Skor gönderildi (ilk kez).");
+                    else
+                        Debug.LogError("Skor gönderilemedi: " + submitResponse.errorData.message);
+                });
+            }
+        });
+    }
+    /*public void SubmitScore()
     {
         string memberID = memberIDInput.text;
         int newScore;
@@ -96,7 +131,7 @@ public class Scoreboard : MonoBehaviour
                 });
             }
         });
-    }
+    }*/
 
     public void ShowScores()
     {

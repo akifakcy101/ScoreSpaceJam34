@@ -2605,7 +2605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7244464675020782029, guid: 175c01a53bddd4f428a16abde1598a19, type: 3}
       propertyPath: gameStartHealt
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7244464675020782029, guid: 175c01a53bddd4f428a16abde1598a19, type: 3}
       propertyPath: pauseScreenPanel

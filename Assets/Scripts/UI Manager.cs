@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject endGamePanel;
     [SerializeField] private float panelFinalAlpha;
     [SerializeField] private float panelFadeInTime;
+
 
 
     private void OnDisable()
@@ -50,9 +52,15 @@ public class UIManager : MonoBehaviour
         endGameScorePointText.text = GameManager.instance.pointAcquired.ToString();
         endGamePanel.SetActive(true);
         Time.timeScale = 0f;
-    }
+        Debug.Log(GameData.playerName + " " + GameManager.instance.pointAcquired);
+        
+        
+        Scoreboard.SubmitScoreStatic(GameData.playerName, GameManager.instance.pointAcquired, 30764);
 
-    public void PlayAgain()
+    }
+    
+
+public void PlayAgain()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
