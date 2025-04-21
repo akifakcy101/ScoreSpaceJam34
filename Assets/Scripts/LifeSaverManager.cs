@@ -16,8 +16,7 @@ public class LifeSaverManager : MonoBehaviour
     private void ChangeLifeSaverHealt(int amount)
     {
         GameManager.instance.healtPoint += amount;
-        Debug.Log("A");
-        if(GameManager.instance.healtPoint <= 0)
+        if (GameManager.instance.healtPoint <= 0)
         {
             GameManager.OnGameEnd.Invoke();
         }
@@ -44,6 +43,5 @@ public class LifeSaverManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Saðlýk:" + GameManager.instance.healtPoint);
     }
 }
