@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject endGamePanel;
     [SerializeField] private float panelFinalAlpha;
     [SerializeField] private float panelFadeInTime;
+    [SerializeField] private GameObject pauseScreenPanel;
 
 
     private void OnDisable()
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnDamaged -= ChangeHealtPointText;
         GameManager.OnPointAcquired -= ChangePointText;
         GameManager.OnGameEnd -= EndGame;
+        GameManager.OnGameStateChanged -= ChangePauseMenuPanelEnable;
     }
 
     private void Start()
@@ -28,6 +30,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnDamaged += ChangeHealtPointText;
         GameManager.OnPointAcquired += ChangePointText;
         GameManager.OnGameEnd += EndGame;
+        GameManager.OnGameStateChanged += ChangePauseMenuPanelEnable;
         pointNumberText.text = GameManager.instance.pointAcquired.ToString();
         healtPointText.text = GameManager.instance.healtPoint.ToString();
     }
@@ -50,6 +53,7 @@ public class UIManager : MonoBehaviour
         endGameScorePointText.text = GameManager.instance.pointAcquired.ToString();
         endGamePanel.SetActive(true);
         Time.timeScale = 0f;
+        GameManager.instance.gameState = GameState.Ended;
     }
 
     public void PlayAgain()
@@ -75,4 +79,26 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
     }
+
+    private void ChangePauseMenuPanelEnable()
+    {
+        if (GameManager.instance.gameState == GameState.Continue)
+        {
+            pauseScreenPanel.SetActive(false);
+            healtText.enabled = true;
+            healtPointText.enabled = true;
+            pointText.enabled = true;
+            pointNumberText.enabled = true;
+        }
+        else if(GameManager.instance.gameState == GameState.Paused)
+        {
+            pauseScreenPanel.SetActive(true);
+            healtText.enabled = false;
+            healtPointText.enabled = false;
+            pointText.enabled = false;
+            pointNumberText.enabled = false;
+        }
+    }
+
+    
 }
