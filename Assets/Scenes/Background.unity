@@ -488,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &440753974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2484,9 +2484,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: afe172d5d64cc3d44a4fb9ae9a21c1ab, type: 3}
+      - m_Target: {fileID: 3198988572774288188}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangePauseMenuPanelEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
