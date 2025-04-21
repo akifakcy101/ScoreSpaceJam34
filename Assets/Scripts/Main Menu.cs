@@ -6,21 +6,20 @@ public class MainMenu : MonoBehaviour
 {
     public TMP_InputField memberinput;
     public TextMeshProUGUI ymean;
-   
 
     public void PlayGame()
     {
         string input = memberinput.text.Trim();
         Time.timeScale = 1f;
 
-        if (!string.IsNullOrEmpty(input) && !input.Contains(" "))
+        if (!string.IsNullOrEmpty(input))
         {
-            GameData.playerName = memberinput.text;
+            GameData.playerName = memberinput.text; 
             SceneManager.LoadScene(1);
         }
         else
         {
-            ymean.gameObject.SetActive(true); 
+            ymean.gameObject.SetActive(true);
         }
     }
 
