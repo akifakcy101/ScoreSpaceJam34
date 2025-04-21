@@ -2357,12 +2357,12 @@ MonoBehaviour:
   maxYSpacing: 3
   minX: -4
   maxX: 4
-  lowDangerFrequency: 0.2
-  midDangerFrequency: 0.4
-  maxDangerFrequency: 0.6
-  lowRescueFrequency: 0.1
-  midRescueFrequency: 0.3
-  maxRescueFrequency: 0.5
+  lowDangerFrequency: 1
+  midDangerFrequency: 2
+  maxDangerFrequency: 4
+  lowRescueFrequency: 0.6
+  midRescueFrequency: 1.2
+  maxRescueFrequency: 1.2
 --- !u!4 &2063960870
 Transform:
   m_ObjectHideFlags: 0
@@ -2461,7 +2461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7244464675020782029, guid: 175c01a53bddd4f428a16abde1598a19, type: 3}
       propertyPath: gameStartHealt
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7244464675020782029, guid: 175c01a53bddd4f428a16abde1598a19, type: 3}
       propertyPath: pauseScreenPanel

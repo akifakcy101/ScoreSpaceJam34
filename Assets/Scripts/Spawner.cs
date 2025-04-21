@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
                 int tries = 0;
                 do
                 {
-                    rescuePos = new Vector2(GetSpreadX(minX, maxX), nextSpawnY + Random.Range(-1f, 1f));
+                    rescuePos = CheckForObstacle(new Vector2(GetSpreadX(minX, maxX), nextSpawnY + Random.Range(-1f, 1f)));
                     tries++;
                 }
                 while (IsNearDanger(rescuePos) && tries < 10);
@@ -88,6 +88,18 @@ public class Spawner : MonoBehaviour
         spawnedObjects.Add(obj);
     }
 
+    Vector2 CheckForObstacle(Vector2 spawnPos)
+    {
+        Collider2D colliders = Physics2D.OverlapCircle(spawnPos, 0.5f, LayerMask.GetMask("Obstacle"));
+        if(!colliders)
+        {
+            return spawnPos;
+        }
+        else
+        {
+            return CheckForObstacle(new Vector2(GetSpreadX(minX, maxX), spawnPos.y));
+        }
+    }
     void UpdateDangerFrequency(float y)
     {
         if (y < 100f)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4787972014255148095}
   - component: {fileID: 7988860119440473210}
   - component: {fileID: 8931659531533327152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 2-removebg-preview_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
