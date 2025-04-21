@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Ended
+  m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 836849183}
   - component: {fileID: 836849182}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainGamePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2430,6 +2430,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8207633098988459666, guid: e98cf4ebe1f722744abc414f063da771, type: 3}
+      propertyPath: forcePower
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2457,7 +2461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7244464675020782029, guid: 175c01a53bddd4f428a16abde1598a19, type: 3}
       propertyPath: gameStartHealt
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7244464675020782029, guid: 175c01a53bddd4f428a16abde1598a19, type: 3}
       propertyPath: pauseScreenPanel
