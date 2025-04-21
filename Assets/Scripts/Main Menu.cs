@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
         if (!string.IsNullOrEmpty(input) && !input.Contains(" "))
         {
+            GameData.playerName = memberinput.text;
             SceneManager.LoadScene(1);
         }
         else
