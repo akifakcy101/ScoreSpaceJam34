@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     }
     
     //Write This System  In UI Manager
-    private void ChangeGameState()
+    public void ChangeGameState()
     {
 
         if(gameState == GameState.Continue)

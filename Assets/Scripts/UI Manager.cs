@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float panelFinalAlpha;
     [SerializeField] private float panelFadeInTime;
     [SerializeField] private GameObject pauseScreenPanel;
-
 
 
     private void OnDisable()
@@ -55,17 +53,13 @@ public class UIManager : MonoBehaviour
         endGameScorePointText.text = GameManager.instance.pointAcquired.ToString();
         endGamePanel.SetActive(true);
         Time.timeScale = 0f;
-        Debug.Log(GameData.playerName + " " + GameManager.instance.pointAcquired);
-        
-        
-        Scoreboard.SubmitScoreStatic(GameData.playerName, GameManager.instance.pointAcquired, 30764);
         GameManager.instance.gameState = GameState.Ended;
+
+        Debug.Log(GameData.playerName + " " + GameManager.instance.pointAcquired);
+        Scoreboard.SubmitScoreStatic(GameData.playerName, GameManager.instance.pointAcquired, 30764);
     }
 
-    }
-    
-
-public void PlayAgain()
+    public void PlayAgain()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -81,9 +75,9 @@ public void PlayAgain()
     {
         var panelImage = endGamePanel.GetComponent<UnityEngine.UI.Image>().color;
         float timer = 0f;
-        while(time >= timer)
+        while (time >= timer)
         {
-            panelImage.a = Mathf.Lerp(panelImage.a,panelFinalAlpha,timer / time);
+            panelImage.a = Mathf.Lerp(panelImage.a, panelFinalAlpha, timer / time);
             timer += Time.deltaTime;
             yield return null;
         }
@@ -99,7 +93,7 @@ public void PlayAgain()
             pointText.enabled = true;
             pointNumberText.enabled = true;
         }
-        else if(GameManager.instance.gameState == GameState.Paused)
+        else if (GameManager.instance.gameState == GameState.Paused)
         {
             pauseScreenPanel.SetActive(true);
             healtText.enabled = false;
@@ -109,5 +103,5 @@ public void PlayAgain()
         }
     }
 
-    
+
 }
