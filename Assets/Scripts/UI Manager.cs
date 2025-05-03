@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void ChangePauseMenuPanelEnable()
+    public void ChangePauseMenuPanelEnable()
     {
         if (GameManager.instance.gameState == GameState.Continue)
         {
