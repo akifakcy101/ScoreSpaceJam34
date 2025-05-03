@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using LootLocker.Requests;
-using UnityEngine.UI;
 using TMPro;
-using UnityEngine.UIElements;
 
 public class Scoreboard : MonoBehaviour
 {
-    public TMP_InputField memberIDInput, scoreInput;
-    public int leaderboardID;
+    public TMP_InputField memberIDInput;
+    public int scoreboardID;
     public TextMeshProUGUI[] entries;
 
     int maxScore = 100;
@@ -71,71 +69,10 @@ public class Scoreboard : MonoBehaviour
             }
         });
     }
-    /*public void SubmitScore()
-    {
-        string memberID = memberIDInput.text;
-        int newScore;
-
-        if (string.IsNullOrEmpty(memberID) || !int.TryParse(scoreInput.text, out newScore))
-        {
-            Debug.LogWarning("Geçerli isim ve sayı gir!");
-            return;
-        }
-
-        // Önce bu oyuncunun önceki skorunu kontrol et
-        LootLockerSDKManager.GetMemberRank(leaderboardID.ToString(), memberID, (response) =>
-        {
-            if (response.success)
-            {
-                int currentScore = response.score;
-
-                Debug.Log($"Mevcut skor: {currentScore}, Yeni skor: {newScore}");
-
-                if (newScore > currentScore)
-                {
-                    // Yeni skor daha yüksekse güncelle
-                    LootLockerSDKManager.SubmitScore(memberID, newScore, leaderboardID.ToString(), (submitResponse) =>
-                    {
-                        if (submitResponse.success)
-                        {
-                            Debug.Log("Skor güncellendi!");
-                            ShowScores();
-                        }
-                        else
-                        {
-                            Debug.LogError("Skor gönderilemedi: " + submitResponse.errorData.message);
-                        }
-                    });
-                }
-                else
-                {
-                    Debug.Log("Yeni skor mevcut skordan düşük veya eşit, gönderilmedi.");
-                }
-            }
-            else
-            {
-                // Oyuncunun hiç skoru yoksa → doğrudan ekle
-                Debug.Log("Oyuncunun skoru bulunamadı, ilk kez gönderiliyor.");
-
-                LootLockerSDKManager.SubmitScore(memberID, newScore, leaderboardID.ToString(), (submitResponse) =>
-                {
-                    if (submitResponse.success)
-                    {
-                        Debug.Log("Skor gönderildi (ilk kez).");
-                        ShowScores();
-                    }
-                    else
-                    {
-                        Debug.LogError("Skor gönderilemedi: " + submitResponse.errorData.message);
-                    }
-                });
-            }
-        });
-    }*/
-
+    
     public void ShowScores()
     {
-        LootLockerSDKManager.GetScoreList(leaderboardID.ToString(), maxScore, (response) =>
+        LootLockerSDKManager.GetScoreList(scoreboardID.ToString(), maxScore, (response) =>
         {
             if (response.success)
             {
