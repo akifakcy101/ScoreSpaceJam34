@@ -12,7 +12,7 @@ public class Scoreboard : MonoBehaviour
 
     void Start()
     {
-        // Oyuncunun nickname'ini al ya da rastgele oluştur
+        // Sunucuya bağlanmak için ID oluşturma
         string playerID = PlayerPrefs.GetString("playerID", "");
         if (string.IsNullOrEmpty(playerID))
         {
